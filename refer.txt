@@ -1,0 +1,31 @@
+文件说明：
+ecc.c		c语言代码
+ecc.h		c语言头文件
+ecc.e		易语言调用ecc.dll源码
+ecc.dll		ecc动态链接库
+ecc.exe		ecc.c编译的可执行文件，用于调试（大可不管，删除）
+Run.bat		运行目录下的ecc.exe
+Compile2Run.bat	将ecc.c编译为ecc.exe，并执行
+Compile2DLL.bat	将ecc.c编译为ecc.dll动态链接库
+
+编译到DLL：
+在gcc环境下，运行Compile2DLL.bat，即可在目录编译出ecc.dll
+（多出来的ecc.o不用管，可以删掉，只是ecc.c到ecc.dll的中间产物）
+至于gcc环境如何配置，度娘会告诉你。
+
+参考代码：
+
+易语言：
+字节集与十六进制文本转换的源码Copy自易语言资源网。。。
+
+C语言：
+SM3 ：https://blog.csdn.net/a344288106/article/details/80094878
+去掉大小端模式的判断，默认以小端模式来处理。
+其他一些无关紧要的修改。
+
+Barrett ：https://blog.csdn.net/YKRY35/article/details/79179285
+划掉的那一句是对的。。。
+
+KDF ：https://blog.csdn.net/deng214/article/details/80345570
+SHA256 ：https://blog.csdn.net/c_duoduo/article/details/43889759
+KDF和SHA256只改了输出的方式，把输出十六进制文本改成字节集
